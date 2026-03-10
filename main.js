@@ -49,10 +49,31 @@ function parseLearningObjectivesMarkdown(text) {
 
 function findCourseByName(courses, sectionName) {
   const needle = sectionName.trim().toLowerCase();
-  return (
+  const exact =
     courses.find((course) => course.course.trim().toLowerCase() === needle) ||
-    courses.find((course) => course.course.toLowerCase().includes(needle))
-  );
+    courses.find((course) => course.course.toLowerCase().includes(needle));
+  if (exact) return exact;
+
+  // Fuzzy fallback for renamed headings (e.g., "Python basics" vs "Introduction to Python")
+  const tokens = needle
+    .split(/[^a-z0-9]+/)
+    .filter((token) => token.length >= 4)
+    .filter((token) => !['introduction', 'foundations', 'practice', 'workflow'].includes(token));
+
+  if (!tokens.length) return null;
+
+  let best = null;
+  let bestScore = 0;
+  for (const course of courses) {
+    const title = course.course.toLowerCase();
+    const score = tokens.reduce((acc, token) => acc + (title.includes(token) ? 1 : 0), 0);
+    if (score > bestScore) {
+      best = course;
+      bestScore = score;
+    }
+  }
+
+  return bestScore > 0 ? best : null;
 }
 
 function resolveSectionGroup(courses, aliases) {
@@ -219,6 +240,13 @@ function renderPathways(pathways) {
 
     const list = document.createElement('div');
     list.className = 'path-objectives';
+    if (!pathway.includedSections.length) {
+      const empty = document.createElement('p');
+      empty.className = 'path-section-source';
+      empty.textContent = 'No matching objective sections were found for this pathway name mapping.';
+      list.appendChild(empty);
+    }
+
     pathway.includedSections.forEach((section) => {
       const sectionWrap = document.createElement('div');
       sectionWrap.className = 'path-section';

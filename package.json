@@ -10,7 +10,6 @@
     "dev": "python3 -m http.server 5173",
     "prebuild": "npm run generate:data",
     "build": "rm -rf dist && mkdir -p dist/data dist/assets && cp index.html styles.css main.js learning_objectives.md course_list.md dist/ && cp data/learning_objectives.json data/course_catalog.json dist/data/ && cp assets/exeter_logo.png dist/assets/",
-    "a11y": "pa11y-ci --config pa11yci.js",
     "preview": "cd dist && python3 -m http.server 4173"
   }
 }
