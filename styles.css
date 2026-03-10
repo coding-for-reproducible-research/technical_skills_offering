@@ -41,35 +41,6 @@ body {
   z-index: -1;
 }
 
-.ribbons {
-  position: fixed;
-  right: 1.5vw;
-  top: -5vh;
-  bottom: -10vh;
-  width: min(170px, 18vw);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.ribbon {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  border-radius: 14px;
-}
-
-.ribbon-a {
-  right: 40%;
-  width: 36%;
-  background: linear-gradient(180deg, rgba(0, 127, 115, 0.16), rgba(0, 127, 115, 0.4));
-}
-
-.ribbon-b {
-  right: 4%;
-  width: 36%;
-  background: linear-gradient(180deg, rgba(0, 90, 98, 0.14), rgba(0, 90, 98, 0.34));
-}
-
 .hero,
 main,
 footer {
