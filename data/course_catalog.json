@@ -1,0 +1,435 @@
+{
+  "generated_on": "2026-03-10",
+  "total_items": 35,
+  "full_count": 20,
+  "short_count": 3,
+  "overview_count": 12,
+  "full_courses": [
+    {
+      "title": "Computational Thinking",
+      "filename": "computational_thinking.ipynb",
+      "offering_type": "full",
+      "summary": "Being an effective programmer is not just about writing code, it\u2019s about designing solutions to problems in a way that a computer would understand, i.e. designing and implementing algorithms. However, most introductory courses focus exclusively on the implementing, ignoring the design elements. Over two sessions, this course will introduce you to some fundamental principles that are the basis of writing computer code in any language and should enable you to write, develop and debug your code more effectively. This course is aimed at anyone who is currently programming or thinking about learning to program."
+    },
+    {
+      "title": "Improve Your R Code",
+      "filename": "improve_your_r_code.ipynb",
+      "offering_type": "full",
+      "summary": "R is primarily known as a language and environment for statistical computing and graphics. However, its flexibility and accessibility have led to widespread use across disciplines including biosciences, medicine, and social sciences. This workshop is designed to help learners **improve the style and speed** of their R code. It is aimed at individuals who already write R scripts and want to develop more maintainable and performant code."
+    },
+    {
+      "title": "Intermediate Version Control",
+      "filename": "intermediate_version_control.ipynb",
+      "offering_type": "full",
+      "summary": "This course offers a comprehensive guide to mastering version control with Git, focusing on advanced topics and practical workflows. The course is designed to deepen your understanding of Git through hands-on exercises and real-world scenarios. Topics covered include configuring Git, working with branches and merges, understanding GitHub workflows, managing remotes, and rewriting history. The course aims to equip participants with the skills necessary to efficiently manage and collaborate on projects using Git."
+    },
+    {
+      "title": "Introduction to GPUs",
+      "filename": "intro_to_gpus.ipynb",
+      "offering_type": "full",
+      "summary": "Welcome to the Introduction to GPU Programming course! This course has been designed to give you a practical foundation in GPU computing for scientific and technical applications. You will learn the essential concepts of GPU architectures, explore how to run code on modern accelerators, and develop hands-on skills in managing environments, running jobs on HPC systems, and optimising performance. The focus will be on applying these skills through guided exercises and projects in numerical modelling and simulation."
+    },
+    {
+      "title": "Introduction to HPC",
+      "filename": "intro_to_hpc.ipynb",
+      "offering_type": "full",
+      "summary": "A high performance computing (HPC) cluster is an essential tool for computational tasks that are too intensive for a personal computer, for example analysing large datasets. This course will introduce ISCA, the Exeter\u2019s HPC cluster, and teach participants how to design a HPC workflow, interrogate the Slurm scheduling system, and run simple applications on cluster. At the end of this interactive course, participants will be able to translate what they have learnt to improve the efficiency of their computational research. This course is aimed at those who plan to use ISCA to perform their computational research or who wish to learn what ISCA could enable them to do."
+    },
+    {
+      "title": "Introduction to Julia",
+      "filename": "intro_to_julia.ipynb",
+      "offering_type": "full",
+      "summary": "Welcome to the Introduction to Julia course! This course has been created to give you an idea of Julia's particular language features. It assumes you are already comfortable with the basics of programming, allowing for more detailed and interesting topics to be discussed. To be able to best engage with this course, it is therefore recommended that you are familiar with the content in both \"Introduction to Python\" and \"Python for Data Analysis\"."
+    },
+    {
+      "title": "Introduction to Machine Learning",
+      "filename": "introduction_to_machine_learning.ipynb",
+      "offering_type": "full",
+      "summary": "This course is designed to introduce core machine learning concepts. Students will explore the machine learning landscape, and the main stages of the machine learning pipeline. They will learn about model selection, error, evaluation and validation, and put all of these into practice using Python. `Scikit-learn` will be introduced, and used to pre-process data, train models, and build pipelines."
+    },
+    {
+      "title": "Introduction to Markdown in R",
+      "filename": "Introduction_to_Markdown_in_R.ipynb",
+      "offering_type": "full",
+      "summary": "Reproducibility is a core feature of successful research software development and data science projects. Fully reproducible workflows can be created by integrating data with code and outputs using a special type of text language called \"Markdown\". This course will introduce you to the Markdown language and conceptualise the benefits towards ensuring reproducibility in coding-based research activities. You will also gain hands-on experience of creating reproducible Markdown documents using R: a popular coding environment used in research software development and data science projects."
+    },
+    {
+      "title": "Introduction to Python",
+      "filename": "intro_to_python.ipynb",
+      "offering_type": "full",
+      "summary": "Python is one of the most popular general-purpose programming languages around. It is used in a huge range of applications, from building systems incorporating cutting-edge machine learning, such as in self-driving cars, to building web applications with hundreds of millions of users, as seen in Instagram. As researchers, we use Python for all manner of tasks, from data analysis, to automation, to prototyping software, to creating engaging visuals for websites and publications. Like you, we started our journey into Python learning the basics, building a strong foundation for achieving these more complex tasks. This introductory course will teach you these basics, and get you up to speed on your own programming journeys."
+    },
+    {
+      "title": "Introduction to R",
+      "filename": "intro_to_r.ipynb",
+      "offering_type": "full",
+      "summary": "R is a programming language and software environment primarily focused on performing statistics, data analysis and visualisation. This course will provide an all-purpose introduction to the R programming language and may provide an accessible entry to computer programming in general. Throughout the workshop participants will be taught using RStudio, and will be introduced to best practices from the beginning, including how to document your work in a script. Over three sessions you will learn how to import, manage and process data for statistical analysis and visualisation. At the end of the workshop the participants will have a solid understanding of how to run R commands and the properties of R objects, providing a solid basis for self-guided learning of more complex analyses."
+    },
+    {
+      "title": "Introduction to Regression with R",
+      "filename": "intro_regression_analysis_with_r.ipynb",
+      "offering_type": "full",
+      "summary": "Regression analysis is a fundamental statistical technique used to model the relationship between multiple variables. It is a very flexible tool that can handle a range of different data types (continuous, binary or categorical) and address both complex and simple research questions. In this hands-on workshop you will learn how to fit a range of regression models with R, how to interpret the output and the link between regression and other common statistical tools."
+    },
+    {
+      "title": "Introduction to Unix",
+      "filename": "intro_to_unix.ipynb",
+      "offering_type": "full",
+      "summary": "The Unix system and the shell predate most computational interfaces (e.g. the graphical user interface). Although very old, Unix-based systems and the shell are one of the most powerful ways to use computers - whether it is your laptop or a supercomputer. This course is an introduction to navigating your way around the shell and demonstrating how it can improve your workflow. This can be in the form of data processing, executing code, using a huge range of built-in tools, and creating pipelines."
+    },
+    {
+      "title": "Introduction to Version Control",
+      "filename": "intro_to_version_control.ipynb",
+      "offering_type": "full",
+      "summary": "Version control systems are an incredibly valuable tool for organising software development. They are essential for producing reproducible and transparent research software, coming into their own for facilitating collaborative work. This course will give an introduction to Git, one of the most widely used version control systems in academia and industry. It will also give an introduction to internet platforms such as GitHub and GitLab, which are built on top of Git and designed to facilitate collaboration between software developers and the sharing of code. A key component of the course will be hands-on practice using Git and GitHub, working through theoretical concepts that will be explained with the aid of live demonstrations. By the end of the course, it is intended participants will be comfortable using the basic features of Git and GitHub to keep a record of their day-to-day code development and share their work with others."
+    },
+    {
+      "title": "Mixed Effects Regression with R",
+      "filename": "advanced_regression_analysis_with_r.ipynb",
+      "offering_type": "full",
+      "summary": "This course builds on your existing knowledge of regression to fit more complex models that can handle more complicated data sets. In this session you will learn about mixed effects regression model, when to use them, and how to interpret the results."
+    },
+    {
+      "title": "Parallel Computing",
+      "filename": "parallel_computing.ipynb",
+      "offering_type": "full",
+      "summary": "This course will provide an introduction to parallel programming. Participants will gain practical experience in writing parallel software, understanding how to decompose problems for efficient execution across multiple processes and threads."
+    },
+    {
+      "title": "Python for Data Analysis",
+      "filename": "python_for_data_analysis.ipynb",
+      "offering_type": "full",
+      "summary": "This course provides an in-depth exploration of Python for data analysis, focusing on essential libraries and tools such as NumPy, Pandas, Matplotlib, and Plotly. Additionally, it covers critical software development practices, including testing, virtual environments, and version control, to ensure code reproducibility and collaboration in research projects. By the end of the course, participants will be adept at performing data manipulation, analysis, and visualisation tasks, and will have a solid understanding of maintaining and sharing their code efficiently."
+    },
+    {
+      "title": "Regression Analysis in R: Adapting to Varied Data Types",
+      "filename": "intermediate_regression_analysis_with_r.ipynb",
+      "offering_type": "full",
+      "summary": "Regression analysis is a fundamental statistical technique used to model the relationship between multiple variables. It is a very flexible tool that can handle a range of different data types (continuous, binary or categorical) and address both complex and simple research questions. In this hands-on workshop you will build on your understanding of simple linear regression and learn how to fit a broader range of regression models with R including logistic regression."
+    },
+    {
+      "title": "Software Development Best Practice",
+      "filename": "software_development_best_practices.ipynb",
+      "offering_type": "full",
+      "summary": "This course offers a high-level understanding of software development for research. It is designed to be interactive and so will be delivered within a seminar style with live demonstrations and activities which are aimed at encouraging effective collaboration on code and improving the reproducibility of research. We allow plently of time for discussion and questions to support the conceptual understanding of software development processes."
+    },
+    {
+      "title": "Using Markdown for Python",
+      "filename": "markdown_with_python.ipynb",
+      "offering_type": "full",
+      "summary": "This beginner-level course introduces the basics of Markdown and how to integrate it with Python. Markdown is a markup language commonly used to format text in a simple and readable way, enabling users to create dynamic documents for reports and documentation. On this course, we will explore dynamic documents, understanding how they work and why they are useful. Through hands-on examples, students will learn how to create, save, and share interactive documents that combine text, code, and output."
+    },
+    {
+      "title": "Working With Data in R",
+      "filename": "working_with_data_in_r.ipynb",
+      "offering_type": "full",
+      "summary": "Over two sessions, learn how to use the Tidyverse to work with data in R. The Tidyverse is a collection of R packages designed to help you manipulate, clean and analyse data. This course will introduce you to the functionality of several key packages, while also discussing some of the conventions the Tidyverse uses when working with data. By the end of the course, participants should feel confident to continue using the Tidyverse to work with datasets in R."
+    }
+  ],
+  "short_courses": [
+    {
+      "title": "Drop In Sessions",
+      "filename": "drop_in.ipynb",
+      "offering_type": "short",
+      "summary": "As part of the Coding for Reproducible Research (CfRR) initiative, we are introducing **drop-in sessions** as a new offering this year. These sessions provide an opportunity for colleagues to engage in self-paced study using our full range of online course materials, while also having access to staff support and opportunities for networking."
+    },
+    {
+      "title": "Languages Drop In Sessions",
+      "filename": "languages_drop_in.ipynb",
+      "offering_type": "short",
+      "summary": "As part of the Coding for Reproducible Research (CfRR) initiative, we are introducing **drop-in sessions** as a new offering this year. These sessions provide an opportunity for colleagues to engage in self-paced study using our full range of online course materials, while also having access to staff support and opportunities for networking."
+    },
+    {
+      "title": "Practices Drop In Sessions",
+      "filename": "practice_drop_in.ipynb",
+      "offering_type": "short",
+      "summary": "As part of the Coding for Reproducible Research (CfRR) initiative, we are introducing **drop-in sessions** as a new offering this year. These sessions provide an opportunity for colleagues to engage in self-paced study using our full range of online course materials, while also having access to staff support and opportunities for networking."
+    }
+  ],
+  "overview_pages": [
+    {
+      "title": "Coding Languages",
+      "filename": "coding_languages.ipynb",
+      "offering_type": "overview",
+      "summary": "As part of the Coding for Reproducible Research (CfRR) initiative, we offer courses in several different coding languages, which can be seen in the following pages."
+    },
+    {
+      "title": "Coding Practices",
+      "filename": "coding_practices.ipynb",
+      "offering_type": "overview",
+      "summary": "As part of the Coding for Reproducible Research (CfRR) initiative, we offer courses in a range of coding practices that are essential for enhancing computational skills and ensuring research reproducibility, which can be seen in the following pages."
+    },
+    {
+      "title": "Computational Thinking",
+      "filename": "computational_thinking_overview.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer one computational thinking course:"
+    },
+    {
+      "title": "GPUs",
+      "filename": "gpus.ipynb",
+      "offering_type": "overview",
+      "summary": "Currently there is only a single GPU course avaiable as self-study materials:"
+    },
+    {
+      "title": "High Performance Computing",
+      "filename": "high_performance_computing.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer one High Performance Computing (HPC) course:"
+    },
+    {
+      "title": "Julia",
+      "filename": "julia.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer one Julia course:"
+    },
+    {
+      "title": "Python",
+      "filename": "python.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer three Python courses:"
+    },
+    {
+      "title": "R",
+      "filename": "R.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer seven R courses:"
+    },
+    {
+      "title": "Software Development",
+      "filename": "software_development.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer one software development course:"
+    },
+    {
+      "title": "Unix",
+      "filename": "unix.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer one Unix course:"
+    },
+    {
+      "title": "Version Control",
+      "filename": "version_control.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer two version control courses:"
+    },
+    {
+      "title": "Workshop Information",
+      "filename": "programme_information.ipynb",
+      "offering_type": "overview",
+      "summary": "This section contains all the essential information you need for our workshops, including detailed course descriptions, installation guides, and links to self-study materials. You'll also find important license information, acknowledgements, and details about the developers behind the courses. Additionally, we provide comprehensive content on the material used during the course delivery to refer back to after the course has ended."
+    }
+  ],
+  "all_items": [
+    {
+      "title": "Coding Languages",
+      "filename": "coding_languages.ipynb",
+      "offering_type": "overview",
+      "summary": "As part of the Coding for Reproducible Research (CfRR) initiative, we offer courses in several different coding languages, which can be seen in the following pages."
+    },
+    {
+      "title": "Coding Practices",
+      "filename": "coding_practices.ipynb",
+      "offering_type": "overview",
+      "summary": "As part of the Coding for Reproducible Research (CfRR) initiative, we offer courses in a range of coding practices that are essential for enhancing computational skills and ensuring research reproducibility, which can be seen in the following pages."
+    },
+    {
+      "title": "Computational Thinking",
+      "filename": "computational_thinking.ipynb",
+      "offering_type": "full",
+      "summary": "Being an effective programmer is not just about writing code, it\u2019s about designing solutions to problems in a way that a computer would understand, i.e. designing and implementing algorithms. However, most introductory courses focus exclusively on the implementing, ignoring the design elements. Over two sessions, this course will introduce you to some fundamental principles that are the basis of writing computer code in any language and should enable you to write, develop and debug your code more effectively. This course is aimed at anyone who is currently programming or thinking about learning to program."
+    },
+    {
+      "title": "Computational Thinking",
+      "filename": "computational_thinking_overview.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer one computational thinking course:"
+    },
+    {
+      "title": "Drop In Sessions",
+      "filename": "drop_in.ipynb",
+      "offering_type": "short",
+      "summary": "As part of the Coding for Reproducible Research (CfRR) initiative, we are introducing **drop-in sessions** as a new offering this year. These sessions provide an opportunity for colleagues to engage in self-paced study using our full range of online course materials, while also having access to staff support and opportunities for networking."
+    },
+    {
+      "title": "GPUs",
+      "filename": "gpus.ipynb",
+      "offering_type": "overview",
+      "summary": "Currently there is only a single GPU course avaiable as self-study materials:"
+    },
+    {
+      "title": "High Performance Computing",
+      "filename": "high_performance_computing.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer one High Performance Computing (HPC) course:"
+    },
+    {
+      "title": "Improve Your R Code",
+      "filename": "improve_your_r_code.ipynb",
+      "offering_type": "full",
+      "summary": "R is primarily known as a language and environment for statistical computing and graphics. However, its flexibility and accessibility have led to widespread use across disciplines including biosciences, medicine, and social sciences. This workshop is designed to help learners **improve the style and speed** of their R code. It is aimed at individuals who already write R scripts and want to develop more maintainable and performant code."
+    },
+    {
+      "title": "Intermediate Version Control",
+      "filename": "intermediate_version_control.ipynb",
+      "offering_type": "full",
+      "summary": "This course offers a comprehensive guide to mastering version control with Git, focusing on advanced topics and practical workflows. The course is designed to deepen your understanding of Git through hands-on exercises and real-world scenarios. Topics covered include configuring Git, working with branches and merges, understanding GitHub workflows, managing remotes, and rewriting history. The course aims to equip participants with the skills necessary to efficiently manage and collaborate on projects using Git."
+    },
+    {
+      "title": "Introduction to GPUs",
+      "filename": "intro_to_gpus.ipynb",
+      "offering_type": "full",
+      "summary": "Welcome to the Introduction to GPU Programming course! This course has been designed to give you a practical foundation in GPU computing for scientific and technical applications. You will learn the essential concepts of GPU architectures, explore how to run code on modern accelerators, and develop hands-on skills in managing environments, running jobs on HPC systems, and optimising performance. The focus will be on applying these skills through guided exercises and projects in numerical modelling and simulation."
+    },
+    {
+      "title": "Introduction to HPC",
+      "filename": "intro_to_hpc.ipynb",
+      "offering_type": "full",
+      "summary": "A high performance computing (HPC) cluster is an essential tool for computational tasks that are too intensive for a personal computer, for example analysing large datasets. This course will introduce ISCA, the Exeter\u2019s HPC cluster, and teach participants how to design a HPC workflow, interrogate the Slurm scheduling system, and run simple applications on cluster. At the end of this interactive course, participants will be able to translate what they have learnt to improve the efficiency of their computational research. This course is aimed at those who plan to use ISCA to perform their computational research or who wish to learn what ISCA could enable them to do."
+    },
+    {
+      "title": "Introduction to Julia",
+      "filename": "intro_to_julia.ipynb",
+      "offering_type": "full",
+      "summary": "Welcome to the Introduction to Julia course! This course has been created to give you an idea of Julia's particular language features. It assumes you are already comfortable with the basics of programming, allowing for more detailed and interesting topics to be discussed. To be able to best engage with this course, it is therefore recommended that you are familiar with the content in both \"Introduction to Python\" and \"Python for Data Analysis\"."
+    },
+    {
+      "title": "Introduction to Machine Learning",
+      "filename": "introduction_to_machine_learning.ipynb",
+      "offering_type": "full",
+      "summary": "This course is designed to introduce core machine learning concepts. Students will explore the machine learning landscape, and the main stages of the machine learning pipeline. They will learn about model selection, error, evaluation and validation, and put all of these into practice using Python. `Scikit-learn` will be introduced, and used to pre-process data, train models, and build pipelines."
+    },
+    {
+      "title": "Introduction to Markdown in R",
+      "filename": "Introduction_to_Markdown_in_R.ipynb",
+      "offering_type": "full",
+      "summary": "Reproducibility is a core feature of successful research software development and data science projects. Fully reproducible workflows can be created by integrating data with code and outputs using a special type of text language called \"Markdown\". This course will introduce you to the Markdown language and conceptualise the benefits towards ensuring reproducibility in coding-based research activities. You will also gain hands-on experience of creating reproducible Markdown documents using R: a popular coding environment used in research software development and data science projects."
+    },
+    {
+      "title": "Introduction to Python",
+      "filename": "intro_to_python.ipynb",
+      "offering_type": "full",
+      "summary": "Python is one of the most popular general-purpose programming languages around. It is used in a huge range of applications, from building systems incorporating cutting-edge machine learning, such as in self-driving cars, to building web applications with hundreds of millions of users, as seen in Instagram. As researchers, we use Python for all manner of tasks, from data analysis, to automation, to prototyping software, to creating engaging visuals for websites and publications. Like you, we started our journey into Python learning the basics, building a strong foundation for achieving these more complex tasks. This introductory course will teach you these basics, and get you up to speed on your own programming journeys."
+    },
+    {
+      "title": "Introduction to R",
+      "filename": "intro_to_r.ipynb",
+      "offering_type": "full",
+      "summary": "R is a programming language and software environment primarily focused on performing statistics, data analysis and visualisation. This course will provide an all-purpose introduction to the R programming language and may provide an accessible entry to computer programming in general. Throughout the workshop participants will be taught using RStudio, and will be introduced to best practices from the beginning, including how to document your work in a script. Over three sessions you will learn how to import, manage and process data for statistical analysis and visualisation. At the end of the workshop the participants will have a solid understanding of how to run R commands and the properties of R objects, providing a solid basis for self-guided learning of more complex analyses."
+    },
+    {
+      "title": "Introduction to Regression with R",
+      "filename": "intro_regression_analysis_with_r.ipynb",
+      "offering_type": "full",
+      "summary": "Regression analysis is a fundamental statistical technique used to model the relationship between multiple variables. It is a very flexible tool that can handle a range of different data types (continuous, binary or categorical) and address both complex and simple research questions. In this hands-on workshop you will learn how to fit a range of regression models with R, how to interpret the output and the link between regression and other common statistical tools."
+    },
+    {
+      "title": "Introduction to Unix",
+      "filename": "intro_to_unix.ipynb",
+      "offering_type": "full",
+      "summary": "The Unix system and the shell predate most computational interfaces (e.g. the graphical user interface). Although very old, Unix-based systems and the shell are one of the most powerful ways to use computers - whether it is your laptop or a supercomputer. This course is an introduction to navigating your way around the shell and demonstrating how it can improve your workflow. This can be in the form of data processing, executing code, using a huge range of built-in tools, and creating pipelines."
+    },
+    {
+      "title": "Introduction to Version Control",
+      "filename": "intro_to_version_control.ipynb",
+      "offering_type": "full",
+      "summary": "Version control systems are an incredibly valuable tool for organising software development. They are essential for producing reproducible and transparent research software, coming into their own for facilitating collaborative work. This course will give an introduction to Git, one of the most widely used version control systems in academia and industry. It will also give an introduction to internet platforms such as GitHub and GitLab, which are built on top of Git and designed to facilitate collaboration between software developers and the sharing of code. A key component of the course will be hands-on practice using Git and GitHub, working through theoretical concepts that will be explained with the aid of live demonstrations. By the end of the course, it is intended participants will be comfortable using the basic features of Git and GitHub to keep a record of their day-to-day code development and share their work with others."
+    },
+    {
+      "title": "Julia",
+      "filename": "julia.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer one Julia course:"
+    },
+    {
+      "title": "Languages Drop In Sessions",
+      "filename": "languages_drop_in.ipynb",
+      "offering_type": "short",
+      "summary": "As part of the Coding for Reproducible Research (CfRR) initiative, we are introducing **drop-in sessions** as a new offering this year. These sessions provide an opportunity for colleagues to engage in self-paced study using our full range of online course materials, while also having access to staff support and opportunities for networking."
+    },
+    {
+      "title": "Mixed Effects Regression with R",
+      "filename": "advanced_regression_analysis_with_r.ipynb",
+      "offering_type": "full",
+      "summary": "This course builds on your existing knowledge of regression to fit more complex models that can handle more complicated data sets. In this session you will learn about mixed effects regression model, when to use them, and how to interpret the results."
+    },
+    {
+      "title": "Parallel Computing",
+      "filename": "parallel_computing.ipynb",
+      "offering_type": "full",
+      "summary": "This course will provide an introduction to parallel programming. Participants will gain practical experience in writing parallel software, understanding how to decompose problems for efficient execution across multiple processes and threads."
+    },
+    {
+      "title": "Practices Drop In Sessions",
+      "filename": "practice_drop_in.ipynb",
+      "offering_type": "short",
+      "summary": "As part of the Coding for Reproducible Research (CfRR) initiative, we are introducing **drop-in sessions** as a new offering this year. These sessions provide an opportunity for colleagues to engage in self-paced study using our full range of online course materials, while also having access to staff support and opportunities for networking."
+    },
+    {
+      "title": "Python",
+      "filename": "python.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer three Python courses:"
+    },
+    {
+      "title": "Python for Data Analysis",
+      "filename": "python_for_data_analysis.ipynb",
+      "offering_type": "full",
+      "summary": "This course provides an in-depth exploration of Python for data analysis, focusing on essential libraries and tools such as NumPy, Pandas, Matplotlib, and Plotly. Additionally, it covers critical software development practices, including testing, virtual environments, and version control, to ensure code reproducibility and collaboration in research projects. By the end of the course, participants will be adept at performing data manipulation, analysis, and visualisation tasks, and will have a solid understanding of maintaining and sharing their code efficiently."
+    },
+    {
+      "title": "R",
+      "filename": "R.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer seven R courses:"
+    },
+    {
+      "title": "Regression Analysis in R: Adapting to Varied Data Types",
+      "filename": "intermediate_regression_analysis_with_r.ipynb",
+      "offering_type": "full",
+      "summary": "Regression analysis is a fundamental statistical technique used to model the relationship between multiple variables. It is a very flexible tool that can handle a range of different data types (continuous, binary or categorical) and address both complex and simple research questions. In this hands-on workshop you will build on your understanding of simple linear regression and learn how to fit a broader range of regression models with R including logistic regression."
+    },
+    {
+      "title": "Software Development",
+      "filename": "software_development.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer one software development course:"
+    },
+    {
+      "title": "Software Development Best Practice",
+      "filename": "software_development_best_practices.ipynb",
+      "offering_type": "full",
+      "summary": "This course offers a high-level understanding of software development for research. It is designed to be interactive and so will be delivered within a seminar style with live demonstrations and activities which are aimed at encouraging effective collaboration on code and improving the reproducibility of research. We allow plently of time for discussion and questions to support the conceptual understanding of software development processes."
+    },
+    {
+      "title": "Unix",
+      "filename": "unix.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer one Unix course:"
+    },
+    {
+      "title": "Using Markdown for Python",
+      "filename": "markdown_with_python.ipynb",
+      "offering_type": "full",
+      "summary": "This beginner-level course introduces the basics of Markdown and how to integrate it with Python. Markdown is a markup language commonly used to format text in a simple and readable way, enabling users to create dynamic documents for reports and documentation. On this course, we will explore dynamic documents, understanding how they work and why they are useful. Through hands-on examples, students will learn how to create, save, and share interactive documents that combine text, code, and output."
+    },
+    {
+      "title": "Version Control",
+      "filename": "version_control.ipynb",
+      "offering_type": "overview",
+      "summary": "We currently offer two version control courses:"
+    },
+    {
+      "title": "Working With Data in R",
+      "filename": "working_with_data_in_r.ipynb",
+      "offering_type": "full",
+      "summary": "Over two sessions, learn how to use the Tidyverse to work with data in R. The Tidyverse is a collection of R packages designed to help you manipulate, clean and analyse data. This course will introduce you to the functionality of several key packages, while also discussing some of the conventions the Tidyverse uses when working with data. By the end of the course, participants should feel confident to continue using the Tidyverse to work with datasets in R."
+    },
+    {
+      "title": "Workshop Information",
+      "filename": "programme_information.ipynb",
+      "offering_type": "overview",
+      "summary": "This section contains all the essential information you need for our workshops, including detailed course descriptions, installation guides, and links to self-study materials. You'll also find important license information, acknowledgements, and details about the developers behind the courses. Additionally, we provide comprehensive content on the material used during the course delivery to refer back to after the course has ended."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Skills Offering</title>
+    <meta
+      name="description"
+      content="Pick-and-mix learning objectives with pre-packaged pathways for external technical skills planning."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
+    <div class="page-glow" aria-hidden="true"></div>
+    <div class="ribbons" aria-hidden="true">
+      <span class="ribbon ribbon-a"></span>
+      <span class="ribbon ribbon-b"></span>
+    </div>
+    <header class="hero" id="top">
+      <div class="brand-bar">
+        <img class="exeter-logo" src="assets/exeter_logo.png" alt="University of Exeter logo" />
+        <p class="brand-name">Coding for Reproducible Research</p>
+      </div>
+      <h1>Technical Skills Offering</h1>
+      <p class="hero-copy">
+        Build a custom package by selecting learning objectives directly, or start from pre-packaged pathways and
+        adapt them.
+      </p>
+    </header>
+
+    <main id="mainContent">
+      <section class="panel">
+        <h2>How to Use This Page</h2>
+        <ul>
+          <li>Open a pathway and add it to your selection.</li>
+          <li>Refine by selecting or unselecting individual learning objectives.</li>
+          <li>Use the copy button at the bottom and paste the text into an email enquiry.</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="pathwaysSection">
+        <div class="section-head">
+          <h2>Pre-Packaged Pathways</h2>
+          <p>These are recommended combinations of learning objectives aligned to common end goals.</p>
+        </div>
+        <div id="pathwayCards" class="pathway-grid"></div>
+      </section>
+
+      <section class="panel" id="pickMixSection">
+        <div class="section-head">
+          <h2>Pick-and-Mix Learning Objectives</h2>
+          <p>Choose objectives from any course to build a tailored pathway.</p>
+        </div>
+        <div id="objectiveCourses" class="course-accordion"></div>
+      </section>
+
+      <section class="panel" id="selectionSection">
+        <div class="section-head">
+          <h2>Your Selection</h2>
+          <p>
+            Copy this text into an email to
+            <a href="mailto:codingforreproducibleresearch@exeter.ac.uk">codingforreproducibleresearch@exeter.ac.uk</a>.
+          </p>
+        </div>
+
+        <div class="selection-meta">
+          <p>Selected pathways: <strong id="selectedPathwayCount">0</strong></p>
+          <p>Selected objectives: <strong id="selectedObjectiveCount">0</strong></p>
+        </div>
+
+        <label class="sr-only" for="selectionText">Email text generated from selected pathways and objectives</label>
+        <textarea id="selectionText" name="selectionText" rows="14" readonly></textarea>
+
+        <div class="action-row">
+          <button id="copySelectionBtn" class="btn" type="button">Copy to Clipboard</button>
+          <button id="clearSelectionBtn" class="btn btn-secondary" type="button">Clear Selection</button>
+          <p id="copyStatus" class="copy-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Technical Skills Offering</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
