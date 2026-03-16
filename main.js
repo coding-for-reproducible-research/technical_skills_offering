@@ -1,11 +1,11 @@
 const pathwayCards = document.getElementById('pathwayCards');
-const objectiveCourses = document.getElementById('objectiveCourses');
 const selectionText = document.getElementById('selectionText');
 const selectedPathwayCount = document.getElementById('selectedPathwayCount');
 const selectedObjectiveCount = document.getElementById('selectedObjectiveCount');
 const copySelectionBtn = document.getElementById('copySelectionBtn');
 const clearSelectionBtn = document.getElementById('clearSelectionBtn');
 const copyStatus = document.getElementById('copyStatus');
+const autoIncludePrereqs = document.getElementById('autoIncludePrereqs');
 
 const selectedObjectiveKeys = new Set();
 const selectedPathwayIds = new Set();
@@ -84,74 +84,29 @@ function resolveSectionGroup(courses, aliases) {
   return null;
 }
 
-function buildPathways(courses) {
-  const definitions = [
+function buildDataSciencePathway(courses) {
+  const levelDefinitions = [
     {
-      id: 'path-1',
-      title: 'Path 1: Technical Skills Overview Pathway',
-      bestFor:
-        'Teams or organisations that want a broad, high-level overview across core technical skills before selecting deeper specialist modules.',
-      sectionGroups: [
-        ['Computational Thinking'],
-        ['Introduction to Python'],
-        ['Introduction to R'],
-        ['Introduction to Version Control'],
-        ['Introduction to UNIX', 'Introduction to Unix'],
-        ['Software Development Best Practice'],
-      ],
+      id: 'foundational',
+      title: 'Foundational',
+      focus: 'Intro to Python essentials for teams building baseline coding confidence.',
+      sectionGroups: [['Introduction to Python']],
     },
     {
-      id: 'path-2',
-      title: 'Path 2: Python Data and Machine Learning Practitioner',
-      bestFor: 'Teams needing a practical end-to-end Python pathway from coding basics to model pipelines.',
-      sectionGroups: [
-        ['Introduction to Python'],
-        ['Python for Data Analysis'],
-        ['Introduction to Machine Learning'],
-        ['Using Markdown for Python'],
-        ['Introduction to Version Control'],
-      ],
+      id: 'intermediate',
+      title: 'Intermediate',
+      focus: 'Python for data analysis, Markdown workflows, and practical Python environment habits.',
+      sectionGroups: [['Python for Data Analysis'], ['Using Markdown for Python']],
     },
     {
-      id: 'path-3',
-      title: 'Path 3: Reproducible R Analysis and Reporting',
-      bestFor: 'Research groups working in R who want stronger data, modelling, and reporting workflows.',
-      sectionGroups: [
-        ['Introduction to R'],
-        ['Working with Data in R', 'Working With Data in R'],
-        ['Introduction to Regression with R'],
-        ['Regression Analysis in R Adapting to Varied Data Types', 'Regression Analysis in R: Adapting to Varied Data Types'],
-        ['Mixed Effects Regression with R'],
-        ['Introduction to Markdown in R'],
-      ],
-    },
-    {
-      id: 'path-4',
-      title: 'Path 4: HPC, GPUs, and Parallel Performance',
-      bestFor: 'Researchers scaling workloads on clusters and improving compute performance.',
-      sectionGroups: [
-        ['Introduction to UNIX', 'Introduction to Unix'],
-        ['Introduction to HPC'],
-        ['Parallel Computing'],
-        ['Introduction to GPUs'],
-        ['Improve Your R Code'],
-      ],
-    },
-    {
-      id: 'path-5',
-      title: 'Path 5: Collaborative Reproducible Research Delivery',
-      bestFor: 'Teams that need stronger shared practices for maintainable, auditable research outputs.',
-      sectionGroups: [
-        ['Introduction to UNIX', 'Introduction to Unix'],
-        ['Introduction to Version Control'],
-        ['Intermediate Version Control'],
-        ['Software Development Best Practice'],
-        ['Using Markdown for Python', 'Introduction to Markdown in R'],
-      ],
+      id: 'advanced',
+      title: 'Advanced',
+      focus: 'Machine learning concepts, evaluation, and pipeline thinking in Python.',
+      sectionGroups: [['Introduction to Machine Learning']],
     },
   ];
 
-  return definitions.map((definition) => {
+  const levels = levelDefinitions.map((definition) => {
     const includedSections = [];
     const seenCourses = new Set();
 
@@ -173,105 +128,85 @@ function buildPathways(courses) {
     return {
       id: definition.id,
       title: definition.title,
-      bestFor: definition.bestFor,
+      focus: definition.focus,
       includedSections,
       objectiveKeys,
     };
   });
+
+  return {
+    id: 'data-science-python',
+    title: 'Data Science Pathway (Python)',
+    summary: 'Choose level packages to build a clear and realistic training pathway.',
+    levels,
+  };
 }
 
-function createObjectiveCheckbox(item, compact = false) {
-  const wrapper = document.createElement('label');
-  wrapper.className = compact ? 'objective-item objective-item-compact' : 'objective-item';
-
-  const input = document.createElement('input');
-  input.type = 'checkbox';
-  input.dataset.objectiveKey = item.key;
-  input.checked = selectedObjectiveKeys.has(item.key);
-
-  input.addEventListener('change', () => {
-    if (input.checked) {
-      selectedObjectiveKeys.add(item.key);
-    } else {
-      selectedObjectiveKeys.delete(item.key);
-    }
-    syncCheckboxes();
-    renderSelectionText();
-  });
-
-  const text = document.createElement('span');
-  text.textContent = compact ? `${item.course}: ${item.objective}` : item.objective;
-
-  wrapper.appendChild(input);
-  wrapper.appendChild(text);
-  return wrapper;
-}
-
-function syncCheckboxes() {
-  document.querySelectorAll('input[data-objective-key]').forEach((input) => {
-    const key = input.dataset.objectiveKey;
-    input.checked = selectedObjectiveKeys.has(key);
-  });
-}
-
-function renderPathways(pathways) {
+function renderPathwayMatrix(pathway) {
   if (!pathwayCards) return;
   pathwayCards.innerHTML = '';
 
-  pathways.forEach((pathway) => {
-    pathwayMap.set(pathway.id, pathway);
+  const wrap = document.createElement('section');
+  wrap.className = 'pathway-matrix';
 
-    const details = document.createElement('details');
-    details.className = 'path-card';
+  const heading = document.createElement('h3');
+  heading.className = 'matrix-title';
+  heading.textContent = pathway.title;
+  wrap.appendChild(heading);
 
-    const summary = document.createElement('summary');
-    summary.textContent = pathway.title;
-    details.appendChild(summary);
+  const summary = document.createElement('p');
+  summary.className = 'matrix-summary';
+  summary.textContent = pathway.summary;
+  wrap.appendChild(summary);
 
-    const bestFor = document.createElement('p');
-    bestFor.className = 'path-bestfor';
-    bestFor.textContent = `Best for: ${pathway.bestFor}`;
-    details.appendChild(bestFor);
+  const grid = document.createElement('div');
+  grid.className = 'level-grid';
 
-    const includeTitle = document.createElement('p');
-    includeTitle.className = 'path-include-title';
-    includeTitle.textContent = 'Includes:';
-    details.appendChild(includeTitle);
+  const includePrereqs = (levelIndex) => {
+    const shouldChain = autoIncludePrereqs?.checked !== false;
+    if (!shouldChain) return [levelIndex];
+    return Array.from({ length: levelIndex + 1 }, (_, idx) => idx);
+  };
 
-    const list = document.createElement('div');
-    list.className = 'path-objectives';
-    if (!pathway.includedSections.length) {
-      const empty = document.createElement('p');
-      empty.className = 'path-section-source';
-      empty.textContent = 'No matching objective sections were found for this pathway name mapping.';
-      list.appendChild(empty);
-    }
+  pathway.levels.forEach((level, index) => {
+    const packageId = `${pathway.id}:${level.id}`;
+    pathwayMap.set(packageId, { id: packageId, title: `${pathway.title} - ${level.title}` });
 
-    pathway.includedSections.forEach((section) => {
-      const sectionWrap = document.createElement('div');
-      sectionWrap.className = 'path-section';
+    const card = document.createElement('article');
+    card.className = 'level-card';
 
-      const sectionTitle = document.createElement('p');
-      sectionTitle.className = 'path-section-title';
-      sectionTitle.textContent = `${section.course} (${section.objectives.length} objectives)`;
-      sectionWrap.appendChild(sectionTitle);
+    const levelTitle = document.createElement('h4');
+    levelTitle.className = 'level-title';
+    levelTitle.textContent = level.title;
+    card.appendChild(levelTitle);
 
-      const source = document.createElement('p');
-      source.className = 'path-section-source';
-      source.textContent = `Source alignment: ${section.sourceAlignment || section.course}`;
-      sectionWrap.appendChild(source);
+    const focus = document.createElement('p');
+    focus.className = 'level-focus';
+    focus.textContent = level.focus;
+    card.appendChild(focus);
 
-      const objectiveList = document.createElement('ul');
-      objectiveList.className = 'path-section-list';
-      section.objectives.forEach((objective) => {
-        const objectiveItem = document.createElement('li');
-        objectiveItem.textContent = objective;
-        objectiveList.appendChild(objectiveItem);
+    const includes = document.createElement('p');
+    includes.className = 'level-includes';
+    const objectiveCount = level.objectiveKeys.length;
+    includes.textContent = `Includes ${objectiveCount} objective${objectiveCount === 1 ? '' : 's'} across ${
+      level.includedSections.length
+    } course${level.includedSections.length === 1 ? '' : 's'}.`;
+    card.appendChild(includes);
+
+    const sectionList = document.createElement('ul');
+    sectionList.className = 'level-course-list';
+    if (!level.includedSections.length) {
+      const empty = document.createElement('li');
+      empty.textContent = 'No mapped course found yet for this level.';
+      sectionList.appendChild(empty);
+    } else {
+      level.includedSections.forEach((section) => {
+        const sectionItem = document.createElement('li');
+        sectionItem.textContent = section.course;
+        sectionList.appendChild(sectionItem);
       });
-      sectionWrap.appendChild(objectiveList);
-      list.appendChild(sectionWrap);
-    });
-    details.appendChild(list);
+    }
+    card.appendChild(sectionList);
 
     const actions = document.createElement('div');
     actions.className = 'path-actions';
@@ -279,64 +214,42 @@ function renderPathways(pathways) {
     const addBtn = document.createElement('button');
     addBtn.type = 'button';
     addBtn.className = 'btn small-btn';
-    addBtn.textContent = 'Select Full Pathway';
+    addBtn.textContent = 'Select Level';
     addBtn.addEventListener('click', () => {
-      pathway.objectiveKeys.forEach((key) => selectedObjectiveKeys.add(key));
-      selectedPathwayIds.add(pathway.id);
-      syncCheckboxes();
+      const indices = includePrereqs(index);
+      indices.forEach((idx) => {
+        const levelToAdd = pathway.levels[idx];
+        const levelPackageId = `${pathway.id}:${levelToAdd.id}`;
+        levelToAdd.objectiveKeys.forEach((key) => selectedObjectiveKeys.add(key));
+        selectedPathwayIds.add(levelPackageId);
+      });
       renderSelectionText();
     });
 
     const removeBtn = document.createElement('button');
     removeBtn.type = 'button';
     removeBtn.className = 'btn btn-secondary small-btn';
-    removeBtn.textContent = 'Unmark Pathway';
+    removeBtn.textContent = 'Unmark Level';
     removeBtn.addEventListener('click', () => {
-      selectedPathwayIds.delete(pathway.id);
+      selectedPathwayIds.delete(packageId);
       renderSelectionText();
     });
 
-    const hint = document.createElement('p');
-    hint.className = 'path-hint';
-    hint.textContent = 'Selecting a pathway bulk-selects all objectives from the sections listed above.';
-
     actions.appendChild(addBtn);
     actions.appendChild(removeBtn);
-    details.appendChild(actions);
-    details.appendChild(hint);
+    card.appendChild(actions);
 
-    pathwayCards.appendChild(details);
+    grid.appendChild(card);
   });
-}
 
-function renderObjectivesByCourse(courses) {
-  if (!objectiveCourses) return;
-  objectiveCourses.innerHTML = '';
+  wrap.appendChild(grid);
 
-  courses.forEach((course) => {
-      const details = document.createElement('details');
-      details.className = 'course-card';
+  const hint = document.createElement('p');
+  hint.className = 'path-hint';
+  hint.textContent = 'Selecting levels adds all mapped objectives for that level.';
+  wrap.appendChild(hint);
 
-      const summary = document.createElement('summary');
-      summary.textContent = `${course.course} (${course.objectives.length})`;
-      details.appendChild(summary);
-
-      const list = document.createElement('div');
-      list.className = 'course-objectives';
-
-      course.objectives.forEach((objective) => {
-        const item = {
-          course: course.course,
-          objective,
-          key: objectiveKey(course.course, objective),
-        };
-        objectiveMap.set(item.key, item);
-        list.appendChild(createObjectiveCheckbox(item));
-      });
-
-      details.appendChild(list);
-      objectiveCourses.appendChild(details);
-    });
+  pathwayCards.appendChild(wrap);
 }
 
 function buildEmailText() {
@@ -356,13 +269,13 @@ function buildEmailText() {
   const lines = [];
   lines.push('Subject: Technical Skills Offering Enquiry');
   lines.push('');
-  lines.push('Hello Coding for Reproducible Research team,');
+  lines.push('Hello team,');
   lines.push('');
   lines.push('We are interested in the following package:');
   lines.push('');
 
   if (selectedPathways.length) {
-    lines.push('Selected pre-packaged pathways:');
+    lines.push('Selected pathway levels:');
     lines.push(...selectedPathways);
     lines.push('');
   }
@@ -412,7 +325,6 @@ copySelectionBtn?.addEventListener('click', async () => {
 clearSelectionBtn?.addEventListener('click', () => {
   selectedObjectiveKeys.clear();
   selectedPathwayIds.clear();
-  syncCheckboxes();
   renderSelectionText();
   if (copyStatus) copyStatus.textContent = '';
 });
@@ -421,7 +333,7 @@ function fallbackCoursesFromJson(payload) {
   return (payload.courses || []).map((item) => ({
     course: item.course,
     objectives: item.objectives || [],
-    sourceAlignment: 'From extracted CfRR course objectives JSON',
+    sourceAlignment: 'From extracted course objectives JSON',
   }));
 }
 
@@ -443,14 +355,20 @@ async function loadCourseObjectives() {
 
 loadCourseObjectives()
   .then((courses) => {
-    renderObjectivesByCourse(courses);
-    renderPathways(buildPathways(courses));
+    courses.forEach((course) => {
+      course.objectives.forEach((objective) => {
+        const item = {
+          course: course.course,
+          objective,
+          key: objectiveKey(course.course, objective),
+        };
+        objectiveMap.set(item.key, item);
+      });
+    });
+    renderPathwayMatrix(buildDataSciencePathway(courses));
     renderSelectionText();
   })
   .catch(() => {
-    if (objectiveCourses) {
-      objectiveCourses.innerHTML = '<p>Learning objectives could not be loaded.</p>';
-    }
     if (pathwayCards) {
       pathwayCards.innerHTML = '<p>Pathways could not be loaded.</p>';
     }

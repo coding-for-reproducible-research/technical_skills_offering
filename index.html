@@ -6,7 +6,7 @@
     <title>Technical Skills Offering</title>
     <meta
       name="description"
-      content="Pick-and-mix learning objectives with pre-packaged pathways for external technical skills planning."
+      content="Technical skills pathway planning with simple level-based selection."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -16,12 +16,10 @@
     <header class="hero" id="top">
       <div class="brand-bar">
         <img class="exeter-logo" src="assets/exeter_logo.png" alt="University of Exeter logo" />
-        <p class="brand-name">Coding for Reproducible Research</p>
       </div>
       <h1>Technical Skills Offering</h1>
       <p class="hero-copy">
-        Build a custom package by selecting learning objectives directly, or start from pre-packaged pathways and
-        adapt them.
+        Build your enquiry by selecting pathway levels that match your team's current capability and goals.
       </p>
     </header>
 
@@ -29,39 +27,32 @@
       <section class="panel">
         <h2>How to Use This Page</h2>
         <ul>
-          <li>Open a pathway and add it to your selection.</li>
-          <li>Refine by selecting or unselecting individual learning objectives.</li>
+          <li>Choose one or more level packages from the Data Science pathway grid.</li>
+          <li>Optionally auto-include prerequisites when selecting higher levels.</li>
           <li>Use the copy button at the bottom and paste the text into an email enquiry.</li>
         </ul>
       </section>
 
       <section class="panel" id="pathwaysSection">
         <div class="section-head">
-          <h2>Pre-Packaged Pathways</h2>
-          <p>These are recommended combinations of learning objectives aligned to common end goals.</p>
+          <h2>Data Science Pathway Levels</h2>
+          <p>Select a level package first. Use prerequisite auto-include if you want a full progression.</p>
         </div>
+        <label class="prereq-toggle">
+          <input id="autoIncludePrereqs" type="checkbox" checked />
+          <span>When selecting a higher level, automatically include lower levels.</span>
+        </label>
         <div id="pathwayCards" class="pathway-grid"></div>
-      </section>
-
-      <section class="panel" id="pickMixSection">
-        <div class="section-head">
-          <h2>Pick-and-Mix Learning Objectives</h2>
-          <p>Choose objectives from any course to build a tailored pathway.</p>
-        </div>
-        <div id="objectiveCourses" class="course-accordion"></div>
       </section>
 
       <section class="panel" id="selectionSection">
         <div class="section-head">
           <h2>Your Selection</h2>
-          <p>
-            Copy this text into an email to
-            <a href="mailto:codingforreproducibleresearch@exeter.ac.uk">codingforreproducibleresearch@exeter.ac.uk</a>.
-          </p>
+          <p>Copy this text into your email enquiry.</p>
         </div>
 
         <div class="selection-meta">
-          <p>Selected pathways: <strong id="selectedPathwayCount">0</strong></p>
+          <p>Selected levels: <strong id="selectedPathwayCount">0</strong></p>
           <p>Selected objectives: <strong id="selectedObjectiveCount">0</strong></p>
         </div>
 
