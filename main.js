@@ -11,6 +11,7 @@ const selectedObjectiveKeys = new Set();
 const selectedPathwayIds = new Set();
 const objectiveMap = new Map();
 const pathwayMap = new Map();
+const pathwayObjectivesMap = new Map();
 
 function objectiveKey(course, objective) {
   return `${course}::${objective}`;
@@ -145,6 +146,8 @@ function buildDataSciencePathway(courses) {
 function renderPathwayMatrix(pathway) {
   if (!pathwayCards) return;
   pathwayCards.innerHTML = '';
+  pathwayMap.clear();
+  pathwayObjectivesMap.clear();
 
   const wrap = document.createElement('section');
   wrap.className = 'pathway-matrix';
@@ -171,6 +174,7 @@ function renderPathwayMatrix(pathway) {
   pathway.levels.forEach((level, index) => {
     const packageId = `${pathway.id}:${level.id}`;
     pathwayMap.set(packageId, { id: packageId, title: `${pathway.title} - ${level.title}` });
+    pathwayObjectivesMap.set(packageId, level.objectiveKeys);
 
     const card = document.createElement('article');
     card.className = 'level-card';
@@ -220,7 +224,6 @@ function renderPathwayMatrix(pathway) {
       indices.forEach((idx) => {
         const levelToAdd = pathway.levels[idx];
         const levelPackageId = `${pathway.id}:${levelToAdd.id}`;
-        levelToAdd.objectiveKeys.forEach((key) => selectedObjectiveKeys.add(key));
         selectedPathwayIds.add(levelPackageId);
       });
       renderSelectionText();
@@ -252,6 +255,14 @@ function renderPathwayMatrix(pathway) {
   pathwayCards.appendChild(wrap);
 }
 
+function syncSelectedObjectivesFromPathways() {
+  selectedObjectiveKeys.clear();
+  selectedPathwayIds.forEach((pathwayId) => {
+    const objectiveKeys = pathwayObjectivesMap.get(pathwayId) || [];
+    objectiveKeys.forEach((key) => selectedObjectiveKeys.add(key));
+  });
+}
+
 function buildEmailText() {
   const selectedPathways = [...selectedPathwayIds]
     .map((id) => pathwayMap.get(id))
@@ -267,11 +278,11 @@ function buildEmailText() {
   });
 
   const lines = [];
-  lines.push('Subject: Technical Skills Offering Enquiry');
+  lines.push('Subject: Digital Skills Acceleator Enquiry');
   lines.push('');
   lines.push('Hello team,');
   lines.push('');
-  lines.push('We are interested in the following package:');
+  lines.push('We are interested in an executive digital skills programme and would like to start with the following package selections:');
   lines.push('');
 
   if (selectedPathways.length) {
@@ -295,6 +306,8 @@ function buildEmailText() {
   }
 
   lines.push('');
+  lines.push('This draft reflects our starting point only. We are open to adjusting course content and would welcome an iterative discovery discussion to shape a programme around our needs.');
+  lines.push('');
   lines.push('Please advise on suitable delivery format, timing, and next steps.');
   lines.push('');
   lines.push('Best regards,');
@@ -305,6 +318,7 @@ function buildEmailText() {
 
 function renderSelectionText() {
   if (!selectionText) return;
+  syncSelectedObjectivesFromPathways();
   selectionText.value = buildEmailText();
 
   if (selectedPathwayCount) selectedPathwayCount.textContent = String(selectedPathwayIds.size);
