@@ -264,19 +264,6 @@ main {
   color: #00635c;
 }
 
-.about-us {
-  border: 1px solid color-mix(in oklab, var(--edge), white 28%);
-  border-radius: 10px;
-  background: #ffffff;
-  padding: 0.65rem 0.8rem;
-}
-
-.about-us summary {
-  cursor: pointer;
-  font-weight: 700;
-  color: var(--ink);
-}
-
 .about-us-content {
   margin-top: 0.65rem;
 }

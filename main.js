@@ -282,7 +282,7 @@ function buildEmailText() {
   lines.push('');
   lines.push('Hello team,');
   lines.push('');
-  lines.push('We are interested in an executive digital skills programme and would like to start with the following package selections:');
+  lines.push('We are interested in a digital skills consultancy offering and would like to start with the following package selections:');
   lines.push('');
 
   if (selectedPathways.length) {
