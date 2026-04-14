@@ -6,6 +6,7 @@ const copySelectionBtn = document.getElementById('copySelectionBtn');
 const clearSelectionBtn = document.getElementById('clearSelectionBtn');
 const copyStatus = document.getElementById('copyStatus');
 const autoIncludePrereqs = document.getElementById('autoIncludePrereqs');
+const pathwayStatus = document.getElementById('pathwayStatus');
 
 const selectedObjectiveKeys = new Set();
 const selectedPathwayIds = new Set();
@@ -143,11 +144,140 @@ function buildDataSciencePathway(courses) {
   };
 }
 
+function buildPedagogyPathway() {
+  const sessionDefinitions = [
+    {
+      id: 'session-1',
+      title: 'Session 1',
+      focus: 'Foundations of learning in technical skills.',
+      includedSections: [
+        {
+          course: 'Session 1: Foundations of Learning in Technical Skills',
+          objectives: [
+            'Understanding Learning Theories: How People Learn: Introduce foundational learning theories (e.g., Constructivism, Behaviorism, Social Learning Theory) and demonstrate how they can inform effective teaching strategies.',
+            'Recognizing the Nuances of Adult Learning: Explore the unique characteristics of adult learners, focusing on self-direction, leveraging prior experience, and understanding motivational factors that distinguish adult learning from youth-oriented instruction.',
+            'Understanding Learner Profiles: Adapting Content to Diverse Learning Preferences: Examine various learner profiles and preferences (e.g., visual, auditory, kinaesthetic) to address a broad spectrum of learning needs and styles.',
+            'Assessing and Adapting Content to Diverse Learning Preferences: Learn how to create and modify instructional materials to accommodate different learning styles while ensuring cultural sensitivity and inclusivity.',
+            'Supporting a Diverse Range of Learners: Identify strategies to empathize with learners, foster a growth mindset, and provide individualized support for varied backgrounds and abilities.',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'session-2',
+      title: 'Session 2',
+      focus: 'Structuring lessons for effective learning.',
+      includedSections: [
+        {
+          course: 'Session 2: Structuring Lessons for Effective Learning',
+          objectives: [
+            'Instructional Design: Apply principles of instructional design to create structured and outcome-focused lessons.',
+            "Bloom's Taxonomy: Integrate Bloom's Taxonomy to align activities and assessments with learning objectives, promoting progression from foundational knowledge to higher-order thinking.",
+            'Creating Lesson Plans with Differentiated Instruction for Diverse Skill Levels, Parallel Tracks and Challenge Options: Develop lesson plans that incorporate differentiated instruction to address diverse skill levels.',
+            'Incremental Complexity: Design exercises that gradually increase in difficulty, enabling learners to build confidence, deepen understanding, and master skills through practical, reflective, and scaffolded tasks.',
+            'Project-Based Learning: Understand project-based learning techniques to create engaging educational experiences that enhance motivation, deepen understanding, and promote the practical application of knowledge in authentic real-world contexts.',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'session-3',
+      title: 'Session 3',
+      focus: 'Engaging and motivating diverse learners.',
+      includedSections: [
+        {
+          course: 'Session 3: Engaging and Motivating Diverse Learners',
+          objectives: [
+            'Universal Design for Learning (UDL): Explore universal design for learning (UDL) principles to create inclusive learning environments that accommodate diverse abilities and backgrounds.',
+            'Inclusive and Supportive Learning Environments: Understand how to nurture inclusive and supportive learning environments by valuing diversity, fostering engagement, using collaborative techniques, addressing group challenges, and continuously improving teaching practices.',
+            'Identifying Common Challenges for Learners New to Technical Domains: Pinpoint frequent obstacles encountered by beginners and discuss techniques to help them overcome these challenges effectively.',
+            'Assessing Learner Skill Levels and Guiding Their Path: Develop strategies to evaluate learners existing skill levels and provide tailored guidance to help them choose the most appropriate learning track, fostering confidence and ensuring they engage with material suited to their needs.',
+            'Fostering a Growth Mindset and Reducing Programming Anxiety: Explore and evaluate strategies to cultivate a growth mindset in learners, addressing common anxieties in programming education and empowering learners to embrace challenges, persist through setbacks, and build confidence in their abilities.',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'session-4',
+      title: 'Session 4',
+      focus: 'Metacognition, feedback, and continuous improvement.',
+      includedSections: [
+        {
+          course: 'Session 4: Fostering Growth: Metacognition, Feedback, and Continuous Improvement',
+          objectives: [
+            'Metacognition and Self-Regulation: Emphasise the importance of metacognition and self-regulation in helping learners assess their understanding, monitor progress, and adapt their strategies for effective learning.',
+            'Evaluating and Understanding Feedback for Learning: Examine the impact of immediate and incremental feedback on enhancing learning outcomes, including strategies to provide timely, actionable, and supportive guidance that fosters engagement, motivation, and skill development.',
+            'Transitioning from Direct Instruction to Facilitation: Understand the shift from direct instruction to facilitation by exploring strategies to empower learners through active, collaborative, and self-directed learning, fostering independence and critical thinking in intermediate and advanced workshops.',
+            'Designing Technical Assessments: Develop formative and summative assessments tailored to technical skills training, ensuring alignment with learning objectives and emphasizing practical application, critical thinking, and authentic evaluation methods.',
+            'Refining Teaching with Learner Feedback and Data: Leverage learner feedback and data to identify knowledge gaps, adjust teaching strategies, and implement targeted interventions that enhance learner outcomes and align instruction with learning objectives.',
+            'Continuous Improvement and Staying Current: Recognise the importance of staying informed about evolving practices, integrating new research and innovations into teaching, and engaging in reflective practice for ongoing professional growth.',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'session-5',
+      title: 'Session 5',
+      focus: 'Final integrated reflection session.',
+      includedSections: [
+        {
+          course: 'Session 5: Reflection',
+          objectives: [
+            'Engage in Reflective Practice: Encourage participants to critically evaluate their own learning and pinpoint areas for improvement or further exploration.',
+            'Identify Strengths and Weaknesses: Help learners articulate which topics or skills they feel confident about and those they find challenging.',
+            "Foster Peer Learning: Facilitate an environment where participants can learn from each other's strategies, experiences, and perspectives.",
+            'Plan for Ongoing Growth: Support learners in developing actionable steps for continued skill-building and professional development.',
+          ],
+        },
+      ],
+    },
+  ];
+
+  const levels = sessionDefinitions.map((session) => {
+    const objectiveKeys = [];
+    const primarySectionTitle = session.includedSections[0]?.course || session.title;
+    const sessionName = primarySectionTitle.replace(/^Session\s*\d+\s*:\s*/i, '').trim();
+
+    session.includedSections.forEach((section) => {
+      section.objectives.forEach((objective) => {
+        objectiveKeys.push(objectiveKey(section.course, objective));
+      });
+    });
+
+    return {
+      id: session.id,
+      title: session.title,
+      cardTitle: `${session.title}: ${sessionName}`,
+      selectionLabel: `Pedagogy ${session.title} - ${sessionName}`,
+      focus: session.focus,
+      includedSections: session.includedSections,
+      objectiveKeys,
+    };
+  });
+
+  return {
+    id: 'pedagogy-pathway',
+    title: 'Pedagogy Pathway',
+    summary: 'Choose sessions to build educator capability alongside technical delivery.',
+    levels,
+  };
+}
+
+function indexPathwayObjectives(pathway) {
+  pathway.levels.forEach((level) => {
+    level.includedSections.forEach((section) => {
+      section.objectives.forEach((objective) => {
+        const key = objectiveKey(section.course, objective);
+        if (!objectiveMap.has(key)) {
+          objectiveMap.set(key, { course: section.course, objective, key });
+        }
+      });
+    });
+  });
+}
+
 function renderPathwayMatrix(pathway) {
   if (!pathwayCards) return;
-  pathwayCards.innerHTML = '';
-  pathwayMap.clear();
-  pathwayObjectivesMap.clear();
 
   const wrap = document.createElement('section');
   wrap.className = 'pathway-matrix';
@@ -164,6 +294,9 @@ function renderPathwayMatrix(pathway) {
 
   const grid = document.createElement('div');
   grid.className = 'level-grid';
+  if (pathway.levels.length === 5) {
+    grid.classList.add('level-grid-balanced-five');
+  }
 
   const includePrereqs = (levelIndex) => {
     const shouldChain = autoIncludePrereqs?.checked !== false;
@@ -173,7 +306,8 @@ function renderPathwayMatrix(pathway) {
 
   pathway.levels.forEach((level, index) => {
     const packageId = `${pathway.id}:${level.id}`;
-    pathwayMap.set(packageId, { id: packageId, title: `${pathway.title} - ${level.title}` });
+    const selectionTitle = level.selectionLabel || `${pathway.title} - ${level.title}`;
+    pathwayMap.set(packageId, { id: packageId, title: selectionTitle });
     pathwayObjectivesMap.set(packageId, level.objectiveKeys);
 
     const card = document.createElement('article');
@@ -181,7 +315,7 @@ function renderPathwayMatrix(pathway) {
 
     const levelTitle = document.createElement('h4');
     levelTitle.className = 'level-title';
-    levelTitle.textContent = level.title;
+    levelTitle.textContent = level.cardTitle || level.title;
     card.appendChild(levelTitle);
 
     const focus = document.createElement('p');
@@ -197,20 +331,23 @@ function renderPathwayMatrix(pathway) {
     } course${level.includedSections.length === 1 ? '' : 's'}.`;
     card.appendChild(includes);
 
-    const sectionList = document.createElement('ul');
-    sectionList.className = 'level-course-list';
-    if (!level.includedSections.length) {
-      const empty = document.createElement('li');
-      empty.textContent = 'No mapped course found yet for this level.';
-      sectionList.appendChild(empty);
-    } else {
-      level.includedSections.forEach((section) => {
-        const sectionItem = document.createElement('li');
-        sectionItem.textContent = section.course;
-        sectionList.appendChild(sectionItem);
-      });
+    const showSectionList = pathway.id !== 'pedagogy-pathway';
+    if (showSectionList) {
+      const sectionList = document.createElement('ul');
+      sectionList.className = 'level-course-list';
+      if (!level.includedSections.length) {
+        const empty = document.createElement('li');
+        empty.textContent = 'No mapped course found yet for this level.';
+        sectionList.appendChild(empty);
+      } else {
+        level.includedSections.forEach((section) => {
+          const sectionItem = document.createElement('li');
+          sectionItem.textContent = section.course;
+          sectionList.appendChild(sectionItem);
+        });
+      }
+      card.appendChild(sectionList);
     }
-    card.appendChild(sectionList);
 
     const actions = document.createElement('div');
     actions.className = 'path-actions';
@@ -247,11 +384,6 @@ function renderPathwayMatrix(pathway) {
 
   wrap.appendChild(grid);
 
-  const hint = document.createElement('p');
-  hint.className = 'path-hint';
-  hint.textContent = 'Selecting levels adds all mapped objectives for that level.';
-  wrap.appendChild(hint);
-
   pathwayCards.appendChild(wrap);
 }
 
@@ -278,7 +410,8 @@ function buildEmailText() {
   });
 
   const lines = [];
-  lines.push('Subject: Digital Skills Acceleator Enquiry');
+  lines.push('To: codingforreproducibleresearch@exeter.ac.uk');
+  lines.push('Subject: Digital Skills Accelerator Enquiry');
   lines.push('');
   lines.push('Hello team,');
   lines.push('');
@@ -323,6 +456,15 @@ function renderSelectionText() {
 
   if (selectedPathwayCount) selectedPathwayCount.textContent = String(selectedPathwayIds.size);
   if (selectedObjectiveCount) selectedObjectiveCount.textContent = String(selectedObjectiveKeys.size);
+  if (pathwayStatus) {
+    if (selectedPathwayIds.size === 0) {
+      pathwayStatus.textContent = 'Select levels/sessions to populate the email draft below.';
+    } else {
+      const levelLabel = selectedPathwayIds.size === 1 ? 'selection' : 'selections';
+      const objectiveLabel = selectedObjectiveKeys.size === 1 ? 'objective' : 'objectives';
+      pathwayStatus.textContent = `Draft updated: ${selectedPathwayIds.size} ${levelLabel}, ${selectedObjectiveKeys.size} ${objectiveLabel}. Scroll to "Email Draft (Editable)" to review and edit.`;
+    }
+  }
 }
 
 copySelectionBtn?.addEventListener('click', async () => {
@@ -379,7 +521,14 @@ loadCourseObjectives()
         objectiveMap.set(item.key, item);
       });
     });
-    renderPathwayMatrix(buildDataSciencePathway(courses));
+
+    const pathways = [buildDataSciencePathway(courses), buildPedagogyPathway()];
+    pathways.forEach(indexPathwayObjectives);
+
+    if (pathwayCards) pathwayCards.innerHTML = '';
+    pathwayMap.clear();
+    pathwayObjectivesMap.clear();
+    pathways.forEach(renderPathwayMatrix);
     renderSelectionText();
   })
   .catch(() => {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digital Skills Acceleator</title>
+    <title>Digital Skills Accelerator</title>
     <meta
       name="description"
       content="Consultancy offering for digital skills capability building with level-based pathway selection."
@@ -27,8 +27,9 @@
       <section class="panel">
         <h2>About Us</h2>
         <div class="about-us-content">
-          <p>We bring our proven expertise in data science and software development honed at the cutting edge of academic research into industry to empower professionals with advanced technical skills. Building on programmes successfully tested in higher education, we now extend this knowledge to the wider community, supporting both the development of technical proficiency in coding and data science, and the growth of educators equipped to deliver similar training within their own organisations.</p>
-          <p>Acknowledging the growing need for programming and data skills in today's workforce, our vision is to deliver inclusive, pedagogically robust training that not only equips employees with these capabilities but also empowers organisations to build and deliver their own internal programmes. This approach strengthens sustainability and long-term competitiveness by enabling businesses to create bespoke courses tailored precisely to their industry and operational needs.</p>
+          <p>Recognising the growing demand for programming and data skills across today's workforce, we offer training and consultancy grounded in proven expertise in data science and software development, refined at the cutting edge of academic research. We empower industry professionals to develop advanced technical skills that are immediately applicable.</p>
+          <p>Building on many years of delivering successful higher-education training programmes, our bespoke offer supports not only the development of technical proficiency in coding and data science, but also the growth of skilled facilitators who are equipped to deliver comparable training within their own organisations.</p>
+          <p>Our vision is to deliver inclusive, pedagogically robust training that enables organisations to build and sustain their own internal skills and training capabilities. By empowering businesses through bespoke courses - tailored to industry and operational needs - we help strengthen long-term sustainability and competitiveness.</p>
         </div>
       </section>
 
@@ -43,20 +44,25 @@
 
       <section class="panel" id="pathwaysSection">
         <div class="section-head">
-          <h2>Data Science Pathway Levels</h2>
-          <p>Select a level package first, then refine with us into a custom consultancy offering.</p>
+          <h2>Pathway Levels</h2>
+          <p>Select pathway level packages first, then refine with us into a custom consultancy offering.</p>
+          <p class="instruction-note">Step 1: Select pathway levels or sessions to build your package.</p>
+          <p class="instruction-note">Step 2: Each selection updates the editable draft below. <a href="#selectionSection">Jump to Email Draft</a>.</p>
         </div>
         <label class="prereq-toggle">
           <input id="autoIncludePrereqs" type="checkbox" checked />
           <span>When selecting a higher level, automatically include lower levels.</span>
         </label>
+        <p id="pathwayStatus" class="pathway-status" aria-live="polite">Select levels/sessions to populate the email draft below.</p>
         <div id="pathwayCards" class="pathway-grid"></div>
       </section>
 
       <section class="panel" id="selectionSection">
         <div class="section-head">
-          <h2>Draft Enquiry</h2>
-          <p>This message is a starting point only. You are free to change any outlined content, and we can iterate to design a programme around your specific needs.</p>
+          <h2>Email Draft (Editable)</h2>
+          <p class="instruction-note">Step 3: Review and edit the draft directly in the text box below.</p>
+          <p class="instruction-note">There is no on-page send action here. When ready, copy the text into your email client.</p>
+          <p class="instruction-note">Send enquiries to: <a href="mailto:codingforreproducibleresearch@exeter.ac.uk">codingforreproducibleresearch@exeter.ac.uk</a></p>
         </div>
 
         <div class="selection-meta">
@@ -64,11 +70,11 @@
           <p>Selected objectives: <strong id="selectedObjectiveCount">0</strong></p>
         </div>
 
-        <label class="sr-only" for="selectionText">Email text generated from selected pathways and objectives</label>
-        <textarea id="selectionText" name="selectionText" rows="14" readonly></textarea>
+        <label class="sr-only" for="selectionText">Editable email text generated from selected pathways and objectives</label>
+        <textarea id="selectionText" name="selectionText" rows="14" placeholder="Draft text appears here. Send enquiries to codingforreproducibleresearch@exeter.ac.uk."></textarea>
 
         <div class="action-row">
-          <button id="copySelectionBtn" class="btn" type="button">Copy to Clipboard</button>
+          <button id="copySelectionBtn" class="btn" type="button">Copy Draft Text</button>
           <button id="clearSelectionBtn" class="btn btn-secondary" type="button">Clear Selection</button>
           <p id="copyStatus" class="copy-status" aria-live="polite"></p>
         </div>
@@ -77,7 +83,7 @@
     </main>
 
     <footer>
-      <p>Digital Skills Acceleator</p>
+      <p>Digital Skills Accelerator</p>
       <a href="#top">Back to top</a>
     </footer>
 

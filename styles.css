@@ -147,6 +147,17 @@ main {
   margin-top: 0.25rem;
 }
 
+.instruction-note {
+  margin: 0.35rem 0;
+  font-style: italic;
+}
+
+.pathway-status {
+  margin: 0 0 0.7rem;
+  color: var(--path-ink);
+  font-style: italic;
+}
+
 .pathway-matrix {
   border: 2px solid #6b8cc1;
   border-radius: 12px;
@@ -171,6 +182,22 @@ main {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
+}
+
+.level-grid-balanced-five {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.level-grid-balanced-five .level-card {
+  grid-column: span 2;
+}
+
+.level-grid-balanced-five .level-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.level-grid-balanced-five .level-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .level-card {
@@ -301,5 +328,11 @@ footer a {
 
   .level-grid {
     grid-template-columns: 1fr;
+  }
+
+  .level-grid-balanced-five .level-card,
+  .level-grid-balanced-five .level-card:nth-child(4),
+  .level-grid-balanced-five .level-card:nth-child(5) {
+    grid-column: auto;
   }
 }
